@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2px; /* Reduced the gap */
+}
+
+.rectangle-container {
+    position: relative;
+}
+
+.rectangle-text, .rectangle-text1, .know-more {
+    position: absolute;
+    z-index: 1; /* Ensure text is above the image */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.rectangle-text {
+    top: 440px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    color: #fff; /* Text color */
+    font-family: 'DIN Condensed Web', sans-serif;
+    font-size: 34px; /* Font size */
+}
+
+.rectangle-text1 {
+    top: 530px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    color: #b1afaf; /* Text color */
+    font-family: 'Poppins';
+    font-size: 14px; /* Font size */
+}
+
+.know-more {
+    top: 560px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    color: #58a5cf; /* Text color */
+    font-family: 'Poppins';
+    font-size: 15.5px; /* Font size */
+    opacity: 0; /* Initially hidden */
+}
+
+.rectangle {
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.rectangle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease;
+}
+
+.rectangle:hover::before {
+    filter: grayscale(100%) blur(6px) brightness(55%);
+}
+
+.rectangle-container:hover .rectangle-text,
+.rectangle-container:hover .rectangle-text1,
+.rectangle-container:hover .know-more {
+    transform: translateY(-6mm); /* Move text up by 0.6cm */
+}
+
+.rectangle-container:hover .know-more {
+    opacity: 1; /* Show "Know more" on hover */
+}
+
+#rectangle1::before {
+    background-image: url('image\ 4Fox.png');
+}
+
+#rectangle2::before {
+    background-image: url('image\ 4Whale.png');
+}
+
+#rectangle3::before {
+    background-image: url('image\ 4Monkey.png');
+}
+
+#rectangle4::before {
+    background-image: url('image\ 4Gazelle.png');
+}
